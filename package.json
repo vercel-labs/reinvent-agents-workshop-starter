@@ -1,0 +1,27 @@
+{
+  "name": "reinvent-agents-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsx utils/test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/ms": "^2.1.0",
+    "@types/node": "^22.15.30",
+    "dotenv": "^16.4.7",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.1.0",
+    "@slack/web-api": "^7.8.0",
+    "@vercel/sandbox": "^0.0.10",
+    "ai": "6.0.0-beta.122",
+    "ms": "^2.1.3",
+    "zod": "^3.25.67"
+  }
+}
