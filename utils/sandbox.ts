@@ -4,9 +4,16 @@ import { Sandbox } from "@vercel/sandbox";
 import ms from "ms";
 
 export const createSandbox = async (repoUrl: string) => {
+  const token = process.env.GITHUB_TOKEN;
+  console.log("GITHUB_TOKEN exists:", !!token);
+  const authUrl = token
+    ? repoUrl.replace("https://github.com/", `https://${token}@github.com/`)
+    : repoUrl;
+  console.log("Using auth URL:", authUrl.includes("@") ? "[authenticated]" : "[public]");
+
   const sandbox = await Sandbox.create({
     source: {
-      url: repoUrl,
+      url: authUrl,
       type: "git",
     },
     resources: { vcpus: 2 },

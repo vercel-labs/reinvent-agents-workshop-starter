@@ -7,7 +7,7 @@ import {
   editFile,
   listFiles,
   readFile,
-} from "./sandbox";
+} from "./sandbox.js";
 
 export async function codingAgent(prompt: string, repoUrl?: string) {
   console.log("repoUrl:", repoUrl);
@@ -15,8 +15,13 @@ export async function codingAgent(prompt: string, repoUrl?: string) {
 
   try {
     const result = await generateText({
-      model: "amazon/nova-pro",
+      model: "anthropic/claude-sonnet-4",
       prompt,
+      providerOptions: {
+        gateway: {
+          order: ["bedrock", "anthropic"],
+        },
+      },
       system:
         "You are a coding agent. You will be working with js/ts projects. Your responses must be concise. If you make changes to the codebase, be sure to run the create_pr tool once you are done.",
       stopWhen: stepCountIs(10),

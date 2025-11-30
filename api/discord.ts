@@ -1,7 +1,7 @@
 // Discord integration for the coding agent
 
 import crypto from "crypto";
-import { codingAgent } from "../utils/agent";
+import { codingAgent } from "../utils/agent.js";
 
 // Verify the request is from Discord using the public key
 function verifyDiscordRequest(

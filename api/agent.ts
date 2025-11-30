@@ -1,4 +1,4 @@
-import { codingAgent } from "../utils/agent";
+import { codingAgent } from "../utils/agent.js";
 
 export async function POST(request: Request) {
   const body = await request.json();
