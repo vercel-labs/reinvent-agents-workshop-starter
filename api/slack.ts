@@ -79,22 +79,13 @@ export async function POST(request: Request) {
       return new Response("OK");
     }
 
-    await slackClient.chat.postMessage({
-      channel,
-      thread_ts: threadTs,
-      text: `Working on it... I'll create a PR for \`${repoUrl}\``,
-    });
-
     try {
       const result = await codingAgent(prompt, repoUrl);
-      const prUrlMatch = result.response?.match(/https:\/\/github\.com\/[\w-]+\/[\w.-]+\/pull\/\d+/);
 
       await slackClient.chat.postMessage({
         channel,
         thread_ts: threadTs,
-        text: prUrlMatch
-          ? `Done! Here's your PR: ${prUrlMatch[0]}`
-          : `Done! ${result.response || "Changes have been made."}`,
+        text: result.response || "I've made the changes. Check the repository for a new PR.",
       });
     } catch (error) {
       await slackClient.chat.postMessage({
