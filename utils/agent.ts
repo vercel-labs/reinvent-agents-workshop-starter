@@ -57,8 +57,8 @@ export async function codingAgent(prompt: string) {
             const output = fs.readFileSync(path, "utf-8");
             return { path, output };
           } catch (error) {
-            console.error(`Error reading file at ${path}:`, error.message);
-            return { path, error: error.message };
+            console.error(`Error reading file at ${path}:`, error instanceof Error ? error.message : String(error));
+            return { path, error: error instanceof Error ? error.message : String(error) };
           }
         },
       }),
