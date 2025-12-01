@@ -4,7 +4,7 @@ A coding agent built with AI SDK, Vercel AI Gateway, and Vercel Sandbox. It can 
 
 ## Setup
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Freinvent-coding-agent&project-name=reinvent-coding-agent&repository-name=reinvent-coding-agent)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Freinvent-agents-workshop-starter&project-name=reinvent-agents-workshop&repository-name=reinvent-agents-workshop)
 
 1. Install the Vercel CLI: `npm i -g vercel`
 2. Deploy this repo with the button above
