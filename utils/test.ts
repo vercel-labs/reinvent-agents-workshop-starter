@@ -3,9 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
 
-codingAgent(
-  "Tell me how this agent currently works.",
-  "https://github.com/dancer/reinvent-workshop-companion",
-)
+codingAgent("Tell me about this project.")
   .then(console.log)
   .catch(console.error);
