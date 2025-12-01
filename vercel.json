@@ -3,7 +3,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "https://reinvent-agents-workshop.vercel.app/docs",
+      "destination": "https://reinvent-workshop-companion.vercel.app/docs",
       "permanent": false
     }
   ]
